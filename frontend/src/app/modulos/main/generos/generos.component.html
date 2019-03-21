@@ -1,0 +1,21 @@
+<div class="generos">
+  <div class="container">
+      <section class="content">
+        <ul class="lista-generos" *ngFor="let genero of padres" >
+            <button>
+                <h1 class="lista"> {{ genero.nombreCategoria }} </h1>
+             </button>
+          <ul class="lista-generos" >
+             <li *ngFor="let hijo of genero?.hijos">
+                <p>{{ hijo.nombreCategoria }} </p>
+
+
+             </li>
+
+          </ul>
+        </ul>
+    </section>
+        <aside>
+        </aside>
+  </div>
+</div>
