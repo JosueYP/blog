@@ -13,6 +13,10 @@ import { Genero } from 'src/app/modelos/genero.model';
 export class GenerosComponent implements OnInit {
 
   generos = [
+    new Genero({
+      "idCategoria" : 1,
+      "nombreCategoria" : "Categoria 1"
+    })
   ];
 
   padres = []
@@ -28,10 +32,10 @@ export class GenerosComponent implements OnInit {
       }
     )
 
-    this.generoService.padres().toPromise()
+    /*this.generoService.padres().toPromise()
     .then(response => this.padres = response.map(n => new Genero(n, this.generoService)))
     .then(response => this.padres.forEach(n => n.obtenerhijos()))
-    .then(() => console.log(this.padres))
+    .then(() => console.log(this.padres))*/
 
 
   }
