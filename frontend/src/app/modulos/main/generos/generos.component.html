@@ -1,4 +1,4 @@
-<div class="generos">
+<!--<div class="generos">
   <div class="container">
       <section class="content">
         <ul class="lista-generos" *ngFor="let genero of padres" >
@@ -8,14 +8,69 @@
           <ul class="lista-generos" >
              <li *ngFor="let hijo of genero?.hijos">
                 <p>{{ hijo.nombreCategoria }} </p>
-
-
              </li>
-
           </ul>
         </ul>
     </section>
-        <aside>
-        </aside>
+      <aside>
+      </aside>
   </div>
-</div>
+</div>-->
+
+<div class="generos">
+   <div class="container">
+       <section class="content">
+         <ul class="lista-generos" *ngFor="let genero of generos" >             
+            <span class="lista"><b> {{ genero.nombreCategoria }}</b></span>              
+            <ul class="lista-generos" >
+              <li>
+                 <p>Rock alternativo</p>
+              </li>
+           </ul>
+         </ul>
+         <ul class="lista-generos" *ngFor="let genero of generos" >             
+            <span class="lista"><b> {{ genero.nombreCategoria }}</b></span>              
+            <ul class="lista-generos" >
+              <li>
+                 <p>Rock alternativo</p>
+              </li>
+           </ul>
+         </ul>
+         <ul class="lista-generos" *ngFor="let genero of generos" >             
+            <span class="lista"><b> {{ genero.nombreCategoria }}</b></span>              
+            <ul class="lista-generos" >
+              <li>
+                 <p>Rock alternativo</p>
+              </li>
+           </ul>
+         </ul>
+         <ul class="lista-generos" *ngFor="let genero of generos" >             
+            <span class="lista"><b> {{ genero.nombreCategoria }}</b></span>              
+            <ul class="lista-generos" >
+              <li>
+                 <p>Rock alternativo</p>
+              </li>
+           </ul>
+         </ul>
+         <ul class="lista-generos" *ngFor="let genero of generos" >             
+            <span class="lista"><b> {{ genero.nombreCategoria }}</b></span>              
+            <ul class="lista-generos" >
+              <li>
+                 <p>Rock alternativo</p>
+              </li>
+           </ul>
+         </ul>
+         <ul class="lista-generos" *ngFor="let genero of generos" >             
+            <span class="lista"><b> {{ genero.nombreCategoria }}</b></span>              
+            <ul class="lista-generos" >
+              <li>
+                 <p>Rock alternativo</p>
+              </li>
+           </ul>
+         </ul>
+         
+     </section>
+       <aside>
+       </aside>
+   </div>
+ </div>

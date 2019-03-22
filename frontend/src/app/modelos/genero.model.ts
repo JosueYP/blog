@@ -1,8 +1,4 @@
-
-
-
-import { GeneroService } from 'src/app/servicios/genero.service';
-
+/*import { GeneroService } from 'src/app/servicios/genero.service';
 
 export class Genero{
     idCategoria: number;
@@ -15,11 +11,18 @@ export class Genero{
     }
 
     obtenerhijos(){
-
         this.servicio.hijos(this.idCategoria).toPromise()
         .then(response => this.hijos = response)
-
     }
+}*/
+import { GeneroService } from 'src/app/servicios/genero.service';
 
+export class Genero{
+    idCategoria: number;
+    nombreCategoria: string;
 
+    constructor(arg){
+        this.idCategoria = arg.idCategoria;
+        this.nombreCategoria = arg.nombreCategoria;
+    }
 }
