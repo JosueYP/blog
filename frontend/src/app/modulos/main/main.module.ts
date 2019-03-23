@@ -10,6 +10,7 @@ import { PieComponent } from 'src/app/genericos/pie/pie.component';
 import { SliderComponent } from './home/slider/slider.component';
 import { GridAlbumesComponent } from './home/grid-albumes/grid-albumes.component';
 import { GenerosComponent } from './generos/generos.component';
+import { AlbumComponent } from './album/album.component';
 
 
 
@@ -21,7 +22,8 @@ import { GenerosComponent } from './generos/generos.component';
     PieComponent,
     SliderComponent,
     GridAlbumesComponent,
-    GenerosComponent
+    GenerosComponent,
+    AlbumComponent
   ],
   imports: [
     MainRoutingModule,

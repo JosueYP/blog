@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import { MainComponent } from './main.component';
 import { GenerosComponent } from './generos/generos.component';
+import { AlbumComponent } from './album/album.component';
 
 
 const app_routes: Routes = [
@@ -22,7 +23,12 @@ const app_routes: Routes = [
             {
                 path: 'category',
                 component: GenerosComponent
-            }           
+            },
+            {
+                path: 'album',
+                component: AlbumComponent
+            }  
+
         ]
      },
 ];
