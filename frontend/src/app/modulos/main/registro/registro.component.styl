@@ -1,0 +1,65 @@
+.registro
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    .registro-content
+        display: flex
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        justify-content: center
+        align-items: center
+        width: 90%
+        height 80vh
+        -webkit-box-shadow: -5px 9px 21px -4px rgba(0,0,0,0.75);
+        -moz-box-shadow: -5px 9px 21px -4px rgba(0,0,0,0.75);
+        box-shadow: -5px 9px 21px -4px rgba(0,0,0,0.75);
+        border-radius: 20px
+        .portada-registro
+            height 100%
+            background: url('../../../../assets/img/portada2.jpg')
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-position: center
+            background-repeat: no-repeat
+            text-align: center;
+            -webkit-filter: opacity(70%); /* Safari 6.0 - 9.0 */
+            filter: opacity(70%);
+            border-radius: 20px 0 0 20px
+        .formulario-container
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            background-color: #F2F3F4;
+            height 100%
+            padding-left: 5%
+            padding-right: 5%
+            border-radius: 0 20px 20px 0
+            h2
+                font-family: Arial
+            .formulario-registro
+                height: 100% 
+                width: 100%
+                .example-container
+                  display: flex;
+                  flex-direction: column;
+                  width: 100%
+                .example-container > *
+                  width: 100%;
+                  .example-full-width
+                    width: 100%;
+            .contenedor-btn-registrar
+                display: grid
+                grid-template-columns: repeat(2, 1fr)
+                column-gap: 2%
+                width: 100%
+                margin-bottom: 20%
+                .btn-enviar
+                    background-color: #3498DB
+                    width: 100%
+                .btn-login
+                    color: blue
+

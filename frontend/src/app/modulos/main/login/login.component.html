@@ -1,0 +1,50 @@
+<div class="login">
+  <div class="login-content">
+    <div class="portada-login">
+      <img src="" alt="">
+    </div>
+    <div class="form-container">
+      <h2>Login</h2>
+
+      <form [formGroup]="formulario" class="formulario-login" (ngSubmit)="enviar()">
+        <div class="example-container">
+          
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Email" 
+              formControlName="emailFormControl">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput formControlName="contrasena" placeholder="Contraseña"  type="password">
+          </mat-form-field>
+        </div>
+      </form>
+      <!--<form [formGroup]="formulario" class="formulario-login" (ngSubmit)="enviar()">
+        <div class="example-container">
+          
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Email" 
+              formControlName="emailFormControl">
+            <mat-error 
+              *ngIf="emailFormControl.hasError('email') && 
+              !emailFormControl.hasError('required')">
+                Dirección de correo inválido
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              Corre electronico <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput formControlName="contrasena" placeholder="Contraseña"  type="password">
+          </mat-form-field>
+        </div>
+      </form>-->
+      <div class="contenedor-botones">
+          <button type="submit" [disabled]="!profileForm.valid" mat-raised-button class="btn-login">Entrar</button>
+          <button type="submit" mat-raised-button  routerLink="/registro" class="btn-registrar">Registrarme</button>
+          
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="registro">
+  <div class="registro-content">
+    <div class="portada-registro">
+      <img src="" alt="">
+    </div>    
+    <div class="formulario-container">
+      <h2>Registro de usuario</h2>
+      <form class="formulario-registro">
+          <div class="example-container">
+            <mat-form-field>
+                  <input matInput placeholder="Nombre">
+                </mat-form-field><br>
+                
+                <mat-form-field>
+                    <input matInput placeholder="Apellidos">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                <input matInput placeholder="Email" 
+                  [formControl]="emailFormControl">
+                <mat-error 
+                  *ngIf="emailFormControl.hasError('email') && 
+                  !emailFormControl.hasError('required')">
+                    Dirección de correo inválido
+                </mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                  Corre electronico <strong>requerido</strong>
+                </mat-error>
+              </mat-form-field>
+              
+              <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Contraseña" 
+                    [formControl]="contrasenaFormControl">
+                  <mat-error 
+                    *ngIf="contrasenaFormControl.hasError('password') && 
+                    !contrasenaFormControl.hasError('required')">
+                      Dirección de correo inválido
+                  </mat-error>
+                  <mat-error *ngIf="contrasenaFormControl.hasError('required')">
+                    Contraseña <strong>requerida</strong>
+                  </mat-error>
+                </mat-form-field> 
+          </div>
+      </form>
+
+      <div class="contenedor-btn-registrar">
+          <button class="btn-enviar" mat-raised-button>Registrame</button>
+          <button class="btn-login" routerLink="/login" mat-raised-button>Logearme</button>
+      </div>
+  </div>
+  </div>
+</div>

@@ -11,6 +11,9 @@ import { SliderComponent } from './home/slider/slider.component';
 import { GridAlbumesComponent } from './home/grid-albumes/grid-albumes.component';
 import { GenerosComponent } from './generos/generos.component';
 import { AlbumComponent } from './album/album.component';
+import { LoginComponent } from './login/login.component';
+import { RegistroComponent } from './registro/registro.component';
+
 
 
 
@@ -23,7 +26,9 @@ import { AlbumComponent } from './album/album.component';
     SliderComponent,
     GridAlbumesComponent,
     GenerosComponent,
-    AlbumComponent
+    AlbumComponent,
+    LoginComponent,
+    RegistroComponent
   ],
   imports: [
     MainRoutingModule,

@@ -8,6 +8,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 
 import {MatCardModule} from '@angular/material/card';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
@@ -19,6 +20,8 @@ import {MatInputModule} from '@angular/material/input';
         MatToolbarModule,
         MatIconModule,
         MatCardModule,
+        FormsModule,
+        ReactiveFormsModule,
         MatInputModule
     ],
     exports: [
@@ -29,6 +32,8 @@ import {MatInputModule} from '@angular/material/input';
         MatToolbarModule,
         MatIconModule,
         MatCardModule,
+        FormsModule,
+        ReactiveFormsModule,
         MatInputModule
     ]
 })
