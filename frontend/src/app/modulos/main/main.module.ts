@@ -14,9 +14,6 @@ import { AlbumComponent } from './album/album.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 
-
-
-
 @NgModule({
   declarations: [
     MainComponent,

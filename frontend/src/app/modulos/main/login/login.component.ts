@@ -13,7 +13,8 @@ export class LoginComponent implements OnInit {
     Validators.email
   ]);*/
   //formulario: FormGroup
-  constructor(private fb: FormBuilder) {
+  public formGroup: FormGroup;
+  constructor(private formBuilder: FormBuilder) {
     /*this.formulario = fb.group({
       email: [null, Validators.email],
       contrasena: [null, Validators.compose([Validators.required,
@@ -21,16 +22,22 @@ export class LoginComponent implements OnInit {
     });*/
    }
 
-   formulario = new FormGroup({
-    emailFormControl: new FormControl(''),
-    contrasena: new FormControl(''),
-  });
-
-  onSubmit(){
-     console.log(this.formulario .value);
-   }
-
+  
   ngOnInit() {
+    this.buildForm();
   }
 
+  private buildForm() {
+    this.formGroup = this.formBuilder.group({
+      email: ['', [
+        Validators.required, Validators.email
+      ]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
+  }
+
+  public logIn() {
+    const user = this.formGroup.value;
+    console.log(user);
+  }
 }

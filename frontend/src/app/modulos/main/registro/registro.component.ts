@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'registro',
@@ -8,20 +9,41 @@ import {FormControl, Validators} from '@angular/forms';
 })
 export class RegistroComponent implements OnInit {
 
-  emailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email
-  ]);
-
-  contrasenaFormControl = new FormControl('', [
-
-    Validators.required,
-    Validators.minLength(6)
-  ]);
-
-  constructor() { }
+  public formGroup: FormGroup;
+  duracion: number = 5;
+  constructor(private formBuilder: FormBuilder, 
+    private snackBar: MatSnackBar) { }
 
   ngOnInit() {
+    this.buildForm(); 
   }
 
+  buildForm(){    
+    this.formGroup = this.formBuilder.group({
+      nombre: ['', [Validators.required]],
+      apellidos: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      contrasena: ['', [Validators.required]]
+    })
+  }
+
+  public registro(){
+    const registro = this.formGroup.value;
+    console.log(registro);
+    console.log("aas");
+   /* this.snackBar.openFromComponent(PizzaPartyComponent, {
+      duration: this.duracion * 1000,
+    });*/
+  }
 }
+
+/*@Component({
+  selector: 'snack',
+  templateUrl: 'snack.html',
+  styles: [`
+    .example-pizza-party {
+      color: hotpink;
+    }
+  `],
+})
+export class PizzaPartyComponent {}*/

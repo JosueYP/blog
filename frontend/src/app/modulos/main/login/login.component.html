@@ -6,19 +6,33 @@
     <div class="form-container">
       <h2>Login</h2>
 
-      <form [formGroup]="formulario" class="formulario-login" (ngSubmit)="enviar()">
-        <div class="example-container">
+      <form [formGroup]="formGroup" class="formulario-login">
           
+        <div class="example-container">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Email" 
-              formControlName="emailFormControl">
+            <input matInput class="example-right-align" 
+            name="email" formControlName="email" type="email" 
+            placeholder="Correo Electrónico"/>
           </mat-form-field>
 
           <mat-form-field>
-            <input matInput formControlName="contrasena" placeholder="Contraseña"  type="password">
+            <input matInput class="example-right-align" 
+            name="password" formControlName="password" type="password" 
+            placeholder="Contraseña"/>
           </mat-form-field>
         </div>
+          
+        <div class="contenedor-botones">
+          <button mat-raised-button class="btn-login" (click)="logIn()" 
+            [disabled]="formGroup.invalid">Entrar
+          </button>
+          <button mat-raised-button class="btn-registrar" routerLink="/registro">
+            Registrarme
+          </button>
+        </div>
       </form>
+
+     
       <!--<form [formGroup]="formulario" class="formulario-login" (ngSubmit)="enviar()">
         <div class="example-container">
           
@@ -40,11 +54,7 @@
           </mat-form-field>
         </div>
       </form>-->
-      <div class="contenedor-botones">
-          <button type="submit" [disabled]="!profileForm.valid" mat-raised-button class="btn-login">Entrar</button>
-          <button type="submit" mat-raised-button  routerLink="/registro" class="btn-registrar">Registrarme</button>
-          
-      </div>
+
     </div>
   </div>
 </div>
