@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { MainModule } from './modulos/main/main.module';
+import { AuthService } from './servicios/auth.service';
 
 
 
@@ -20,7 +21,9 @@ import { MainModule } from './modulos/main/main.module';
       HttpClientModule,
       AppRoutingModule
    ],
-   providers: [],
+   providers: [
+      AuthService
+   ],
    bootstrap: [
       AppComponent
    ]

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlbumService } from '../../../../servicios/album.service';
 import { Album } from 'src/app/modelos/album.model';
+import { AuthService } from 'src/app/servicios/auth.service';
 
 @Component({
   selector: 'grid-albumes',
@@ -12,14 +13,19 @@ export class GridAlbumesComponent implements OnInit {
   albunes = [];
   visibles = [];
   items : number =  4
-
-  constructor(private albumService: AlbumService){}
+  usuario: any;
+  constructor(private albumService: AlbumService, private auth: AuthService){}
 
   ngOnInit(){
     this.albumService.buscarTodosAlbumes().subscribe(respuesta =>{
       this.albunes = respuesta;
       this.insertar()
     })
+
+    this.auth.usuario.subscribe(usuario => {
+      console.log(usuario)
+    })
+
 
     console.log(this)
   }

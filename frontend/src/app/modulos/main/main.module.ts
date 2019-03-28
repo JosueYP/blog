@@ -13,6 +13,7 @@ import { GenerosComponent } from './generos/generos.component';
 import { AlbumComponent } from './album/album.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
+import { AuthService } from 'src/app/servicios/auth.service';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,6 @@ import { RegistroComponent } from './registro/registro.component';
     HttpClientModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [AuthService],
 })
 export class MainModule { }

@@ -1,43 +1,43 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { MatSnackBar } from '@angular/material';
+import { AuthService } from 'src/app/servicios/auth.service';
 
 @Component({
-  selector: 'login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.styl']
+	selector: 'login',
+	templateUrl: './login.component.html',
+	styleUrls: ['./login.component.styl']
 })
 export class LoginComponent implements OnInit {
 
-  /*emailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email
-  ]);*/
-  //formulario: FormGroup
-  public formGroup: FormGroup;
-  constructor(private formBuilder: FormBuilder) {
-    /*this.formulario = fb.group({
-      email: [null, Validators.email],
-      contrasena: [null, Validators.compose([Validators.required,
-      Validators.minLength(6)])]
-    });*/
-   }
 
-  
-  ngOnInit() {
-    this.buildForm();
-  }
+	formGroup: FormGroup;
+	fromControl: FormControl;
 
-  private buildForm() {
-    this.formGroup = this.formBuilder.group({
-      email: ['', [
-        Validators.required, Validators.email
-      ]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
-    });
-  }
+	constructor(private formBuilder: FormBuilder, private snack: MatSnackBar, private auth:AuthService) {
 
-  public logIn() {
-    const user = this.formGroup.value;
-    console.log(user);
-  }
+	}
+
+
+	ngOnInit() {
+		this.fromControl = new FormControl('', [Validators.required])
+		this.formGroup = this.formBuilder.group({
+			'email': ['', [Validators.required, Validators.email]],
+			'password': this.fromControl
+		})
+
+		this.formGroup.controls['email'].valueChanges.subscribe(eventy => {
+			this.snack.open(eventy, '', {duration: 2000});
+		})
+	}
+
+	logIn(){
+		if(this.formGroup.valid){
+			this.auth.login(this.formGroup.value)
+			
+		}else{
+			this.snack.open('Campos no validos we', 'Validar campos', {duration: 2000});
+		}
+	}
+
 }

@@ -1,39 +1,36 @@
 <div class="login">
-  <div class="login-content">
-    <div class="portada-login">
-      <img src="" alt="">
-    </div>
-    <div class="form-container">
-      <h2>Login</h2>
+	<div class="login-content">
+		<div class="portada-login">
+			<img src="" alt="">
+		</div>
+		<div class="form-container">
+			<h2>Login</h2>
 
-      <form [formGroup]="formGroup" class="formulario-login">
-          
-        <div class="example-container">
-          <mat-form-field class="example-full-width">
-            <input matInput class="example-right-align" 
-            name="email" formControlName="email" type="email" 
-            placeholder="Correo Electrónico"/>
-          </mat-form-field>
+			<form [formGroup]="formGroup" class="formulario-login">
 
-          <mat-form-field>
-            <input matInput class="example-right-align" 
-            name="password" formControlName="password" type="password" 
-            placeholder="Contraseña"/>
-          </mat-form-field>
-        </div>
-          
-        <div class="contenedor-botones">
-          <button mat-raised-button class="btn-login" (click)="logIn()" 
-            [disabled]="formGroup.invalid">Entrar
-          </button>
-          <button mat-raised-button class="btn-registrar" routerLink="/registro">
-            Registrarme
-          </button>
-        </div>
-      </form>
+				<div class="example-container">
+					<mat-form-field class="example-full-width">
+						<input matInput class="example-right-align" name="email" formControlName="email" type="email"
+							placeholder="Correo Electrónico" />
+					</mat-form-field>
 
-     
-      <!--<form [formGroup]="formulario" class="formulario-login" (ngSubmit)="enviar()">
+					<mat-form-field>
+						<input matInput class="example-right-align" name="password" formControlName="password"
+							type="password" placeholder="Contraseña" />
+					</mat-form-field>
+				</div>
+
+				<div class="contenedor-botones">
+					<button mat-raised-button class="btn-login" (click)="logIn()" [disabled]="formGroup.invalid">Entrar
+					</button>
+					<button mat-raised-button class="btn-registrar" routerLink="/registro">
+						Registrarme
+					</button>
+				</div>
+			</form>
+
+
+			<!--<form [formGroup]="formulario" class="formulario-login" (ngSubmit)="enviar()">
         <div class="example-container">
           
           <mat-form-field class="example-full-width">
@@ -55,6 +52,6 @@
         </div>
       </form>-->
 
-    </div>
-  </div>
+		</div>
+	</div>
 </div>
