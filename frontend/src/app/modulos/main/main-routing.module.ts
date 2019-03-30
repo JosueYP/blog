@@ -6,6 +6,8 @@ import { GenerosComponent } from './generos/generos.component';
 import { AlbumComponent } from './album/album.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
+import { AuthService } from 'src/app/servicios/auth.service';
+import { AuthGuard } from 'src/app/seguridad/auth.guard';
 
 
 const app_routes: Routes = [
@@ -28,7 +30,8 @@ const app_routes: Routes = [
             },
             {
                 path: 'album',
-                component: AlbumComponent
+                component: AlbumComponent,
+                canActivate: [AuthGuard]
             } ,
             {
                 path: 'login',

@@ -5,23 +5,24 @@
 		</div>
 		<div class="form-container">
 			<h2>Login</h2>
-
 			<form [formGroup]="formGroup" class="formulario-login">
-
 				<div class="example-container">
 					<mat-form-field class="example-full-width">
-						<input matInput class="example-right-align" name="email" formControlName="email" type="email"
+						<input matInput class="example-right-align" name="email" 
+							formControlName="email" type="email"
 							placeholder="Correo Electrónico" />
 					</mat-form-field>
 
 					<mat-form-field>
-						<input matInput class="example-right-align" name="password" formControlName="password"
+						<input matInput class="example-right-align" name="password" 
+							formControlName="password"
 							type="password" placeholder="Contraseña" />
 					</mat-form-field>
 				</div>
 
 				<div class="contenedor-botones">
-					<button mat-raised-button class="btn-login" (click)="logIn()" [disabled]="formGroup.invalid">Entrar
+					<button mat-raised-button class="btn-login" (click)="logIn()" 
+						[disabled]="formGroup.invalid">Entrar
 					</button>
 					<button mat-raised-button class="btn-registrar" routerLink="/registro">
 						Registrarme
